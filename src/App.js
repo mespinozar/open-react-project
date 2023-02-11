@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
-import TaskListComponent from './components/container/task_list';
+
+import Ejemplo4 from './hooks/ejemplo4';
 
 function App() {
   return (
@@ -8,7 +9,10 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          <TaskListComponent/>
+          <Ejemplo4 nombre="Carol"/>
+          <h3>
+            Contenido del props.Children 
+          </h3>
         </p>
       </header>
     </div>
@@ -16,3 +20,4 @@ function App() {
 }
 
 export default App;
+
