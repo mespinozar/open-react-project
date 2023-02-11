@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 
-import Ejemplo4 from './hooks/ejemplo4';
+import GreetingStyled from './components/pure/greetingStyled';
 
 function App() {
   return (
@@ -9,10 +9,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          <Ejemplo4 nombre="Carol"/>
-          <h3>
-            Contenido del props.Children 
-          </h3>
+          <GreetingStyled name="Pepo"/>
         </p>
       </header>
     </div>
