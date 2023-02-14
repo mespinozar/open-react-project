@@ -1,7 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
-
-import GreetingStyled from './components/pure/greetingStyled';
+//import TaskListComponent from './components/container/task_list';
+//import GreetingStyled from './components/pure/greetingStyled';
+import Father from './components/container/Father';
 
 function App() {
   return (
@@ -9,7 +10,8 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          <GreetingStyled name="Pepo"/>
+          {/*<GreetingStyled name="Pepo"/>*/}
+          <Father/>
         </p>
       </header>
     </div>
