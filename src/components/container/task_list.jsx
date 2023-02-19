@@ -11,24 +11,44 @@ const TaskListComponent = () => {
     const defaultTask2 = new Task('Example2', 'Default description2', false, levels.urgent );
     const defaultTask3 = new Task('Example3', 'Default description3', false, levels.blocking );
 
-
-
     const [tasks, setTasks] = useState([defaultTask1, defaultTask2, defaultTask3]);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-      console.log('Modificacion de tareas');
+      //console.log('Modificacion de tareas');
       setLoading(false);
     
       return () => {
         console.log('Componente en marcha')
       }
     }, [tasks])
-    
 
-    const changeCompleted = ( id ) => {
-        console.log('TODO: Cambiar estado de una tarea')
+    function completeTask(task) {
+        console.log('Complete this Task', task);
+        const index = tasks.indexOf(task);
+        const tempTasks = [...tasks];
+        tempTasks(index).completed = !tempTasks[index].completed;
+        setTasks(tempTasks);
+
     }
+
+    function deleteTask(task) {
+        console.log('Delete this Task', task);
+        const index = tasks.indexOf(task);
+        const tempTasks = [...tasks];
+        tempTasks.splice(index,1);
+        setTasks(tempTasks);
+
+    }
+
+    function addTask(task) {
+        console.log('');
+        const index = tasks.indexOf(task);
+        const tempTasks = [...tasks];
+        tempTasks.push(task);
+        setTasks(tempTasks);
+    }
+    
 
     return (
         <div>
@@ -54,16 +74,16 @@ const TaskListComponent = () => {
                                     <TaskComponent 
                                         key={index}
                                         task={ task }
+                                        complete= { completeTask }
+                                        remove = {deleteTask}
                                     />
                                 )
                             })}
 
-
-                            
                         </tbody>
                     </table>
                 </div>
-                <TaskForm/>
+                <TaskForm add={addTask}/>
             </div>
             
         </div>
