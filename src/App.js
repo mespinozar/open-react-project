@@ -12,8 +12,6 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <p>
         <TaskListComponent/>
-          
-          
         </p>
       </header>
     </div>
