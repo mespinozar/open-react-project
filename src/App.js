@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
-import TaskListComponent from './components/container/task_list';
+//import TaskListComponent from './components/container/task_list';
+import OptionalRender from './components/pure/optionalRender';
 //import GreetingStyled from './components/pure/greetingStyled';
 //import Father from './components/container/Father';
 
@@ -11,7 +12,8 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-        <TaskListComponent/>
+        {/*<TaskListComponent/>*/}
+        <OptionalRender/>
         </p>
       </header>
     </div>
